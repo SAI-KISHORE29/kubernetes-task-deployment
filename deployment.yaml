@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: fastapi
-        image: saikishore29/simple-fastapi-app:latest-tag
+        image: saikishore29/simple-fastapi-app:af8997c1
         ports:
         - containerPort: 3000
         env:
@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: fastapi
-        image: saikishore29/simple-fastapi-app:latest-tag 
+        image: saikishore29/simple-fastapi-app:af8997c1
         ports:
         - containerPort: 3000
         env:
