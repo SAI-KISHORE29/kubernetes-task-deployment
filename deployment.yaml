@@ -2,47 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order-api
+  name: simple-fastapi-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: order-api
+      app: simple-fastapi-app
   template:
     metadata:
       labels:
-        app: order-api
+        app: simple-fastapi-app
     spec:
       containers:
       - name: fastapi
         image: saikishore29/simple-fastapi-app:9f0ca768
         ports:
-        - containerPort: 3000
-        env:
-        - name: SERVICE_NAME
-          value: "order-api"
-
----
-# --- Service 2: The Order Worker / Background Processor ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: order-worker
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: order-worker
-  template:
-    metadata:
-      labels:
-        app: order-worker
-    spec:
-      containers:
-      - name: fastapi
-        image: saikishore29/simple-fastapi-app:9f0ca768
-        ports:
-        - containerPort: 3000
-        env:
-        - name: SERVICE_NAME
-          value: "order-worker"
+        - containerPort: 8000
